@@ -232,7 +232,7 @@ body{
     border-top: var(--black) solid 7px;
     border-radius: 51% 49% 46% 54% / 15% 15% 85% 85%;
     border-color:black transparent transparent transparent ;
-    background-color: #FF0000;
+    background-color: transparent;
     z-index: 10;
     top: 75px;
 }
