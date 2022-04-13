@@ -111,8 +111,13 @@ body{
     color: var(--red);
 }
 
-.name p{
-    font-size: 28px;
+.des{
+    position: absolute;
+    right: 50px;
+    bottom:80px;
+    font-family: 'East Sea Dokdo', cursive;
+    color: var(--red);
+    font-size: 30px;
     font-weight: 500;
 }
 
@@ -226,10 +231,9 @@ body{
     height: 130px;
     border-top: var(--black) solid 7px;
     border-radius: 51% 49% 46% 54% / 15% 15% 85% 85%;
-    border-color:black transparent transparent transparent ;
+    border-color:black #FF0000 #FF0000 #FF0000 ;
     z-index: 10;
     top: 75px;
-    background-color:transparent;
 }
 
 .line.left{
