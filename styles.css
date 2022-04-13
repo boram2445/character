@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap');
+
+/*animation*/
+ @keyframes 꼬리 {
+    from {
+        transform: rotate(-10deg);
+    }
+    to {
+        transform: rotate(-40deg);
+    }
+}
+
+@keyframes 얼굴 {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes 귀오른쪽 {
+    from {
+        transform: rotate(30deg);
+    }
+    to {
+        transform: rotate(40deg) translateX(10px);
+    }
+}
+
+@keyframes 귀왼쪽 {
+    from {
+        transform: rotate(-30deg);
+    }
+    to {
+        transform: rotate(-40deg) translateX(-10px);
+    }
+}
+
+@keyframes 눈동자오른쪽 {
+    from {
+        transform: translateX(0px);
+    }
+    to {
+        transform: translateX(15px);
+    }
+}
+
+@keyframes 눈동자왼쪽 {
+    from {
+        transform: translateX(0px);
+    }
+    to {
+        transform: translateX(15px);
+    }
+}
+
+@keyframes 입오른쪽 {
+    from {
+        transform: rotate(30deg);
+    }
+    to {
+        transform: rotate(40deg);
+    }
+}
+
+@keyframes 입왼쪽 {
+    from {
+        transform: rotate(-30deg);
+    }
+    to {
+        transform: rotate(-40deg);
+    }
+}
+
+/*setting*/
+:root{
+    --black: #222;
+    --white: rgb(255, 247, 242);
+    --green: rgb(107,142,35);
+    --red: #bf360c;
+}
+
+/*reset*/
+*{
+    box-sizing: border-box;
+}
+
+body, h1, p{
+    margin:0;
+}
+
+h1{
+    font-size:initial;
+    font-weight: initial;
+}
+
+/*design*/
+body{
+    background-image: url("images/background.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.wrapper{
+    width: 1000px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.name{
+    margin-bottom: 80px;
+    font-family: 'East Sea Dokdo', cursive;
+    font-size: 90px;
+    font-weight: 700;
+    color: var(--red);
+}
+
+.name p{
+    font-size: 33px;
+    font-weight: 500;
+}
+
+/* cat */
+.cat{
+    margin: -70px auto 50px;
+    position: relative;
+    width:380px;
+    height: 400px;
+    animation: 얼굴 1s infinite alternate;
+    cursor: pointer;
+}
+
+.angry{
+    position: absolute;
+    overflow: 50;
+    top: -120px;
+    right: 40px;
+    width: 100px;
+    opacity: 0.9;
+    display: none;
+}
+
+.cat:hover .angry{
+    display: block;
+}
+
+.cat .tail{
+    position: absolute;
+    width:300px;
+    top: -50px;
+    right: -50px;
+    animation: 꼬리 1s infinite alternate;
+}
+
+.cat .pattern{
+    position: absolute;
+    top: -37px;
+    left: 125px;
+    width: 120px;
+    height: 40px;
+    background-color: var(--white);
+    border-radius: 52% 48% 46% 54% / 100% 100% 0% 0% ;
+    z-index: 10;
+    
+}
+
+.cat .wrinkle{
+    position: absolute;
+    border: 3px solid rgba(0, 0, 0, 0.8);
+    background-color: var(--black);
+    width: 30px;
+    top: -16px;
+    z-index: 30;
+    transform: rotate(90deg);
+    border-radius: 5px;
+}
+
+.cat .wrinkle.left{
+    left: 160px;
+}
+
+.cat .wrinkle.right{
+    right: 155px;
+    transform: rotate(96deg);
+}
+
+.cat .face{
+    position: absolute;
+    top:80px;
+    width: 380px;
+    height: 310px;
+    background-color:var(--white);
+    border: 8px solid var(--black);
+    border-top: 128px var(--black) solid;
+    border-radius: 45%;
+    box-shadow: 0 0 20px rgb(0 0 0 / 50%);
+}
+
+.cat .ear{
+    position: absolute;
+    width: 90px;
+    height: 100px;
+    background-color: var(--black);
+    border-radius: 50% 50% 56% 44% / 81% 81% 19% 19% ;
+    box-shadow: 0 0 20px rgb(0 0 0 / 50%);
+}
+
+.ear.left{
+    top: 35px;
+    left: 50px;
+    animation: 귀왼쪽 1s infinite alternate;
+}
+
+.ear.right{
+    top: 35px;
+    right: 50px;
+    animation: 귀오른쪽 1s infinite alternate;
+}
+
+.face .line{
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    border-top: var(--black) solid 7px;
+    border-radius: 51% 49% 46% 54% / 15% 15% 85% 85%;
+    border-color:black transparent transparent transparent ;
+    z-index: 10;
+    top: 75px;
+    background-color:transparent;
+}
+
+.line.left{
+    left:-40px;
+    transform: rotate(-10deg);
+}
+
+.line.left.bottom{
+    top: 95px;
+}
+
+.line.right{
+    right:-40px;
+    transform: rotate(10deg);
+}
+
+.line.right.bottom{
+    top:95px;
+}
+
+.face .eye{
+    position: absolute;
+    width: 90px;
+    height: 70px;
+    background-color: white;
+    border: 7px var(--black) solid;
+    border-radius: 40%;
+    z-index: 20;
+    margin-top: -7px;
+}
+
+.face .eye.left{
+    left:65px;
+}
+
+.face .eye.right{
+    right:65px;
+}
+
+.eye .pupil{
+    position:absolute;
+    width: 70px;
+    height:68px;
+    background-color: var(--black);
+    border-radius: 50%;
+    top: -5px;
+}
+
+.pupil.left{
+    left:-5px;
+    animation: 눈동자왼쪽 1.5s infinite alternate;
+}
+
+.pupil.right{
+    left:-5px;
+    animation: 눈동자오른쪽 1.5s infinite alternate;
+}
+
+.face .nose{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 20px solid;
+    border-color: var(--black) transparent transparent transparent;
+    border-radius: 10px;
+    top: 70px;
+    left:162px;
+}
+
+.mouth{
+    position: absolute;
+    width: 30px;
+    height: 7px;
+    background-color: var(--black);
+    top: 88px;
+    border-radius: 10px;
+}
+
+.mouth.left{
+    left:160px;
+    animation: 입왼쪽 1s infinite alternate;
+}
+
+.mouth.right{
+    right:160px;
+    animation: 입오른쪽 1s infinite alternate;
+}
+
+/* bowl */
+.bowl{
+    cursor: pointer;
+    margin: 0 auto;
+    width: 300px;
+}
+
+.bowl .top{
+    position: relative;
+    margin: 60px auto -115px;
+    width: 200px;
+    height: 60px;
+    background-color: white;
+    border: var(--black) 8px solid;
+    border-radius: 50% 50% 48% 52% / 50% 53% 47% 50% ;
+}
+
+.bowl .middle{
+    margin: 0 auto;
+    width: 300px;
+    height: 100px;
+    border: 70px solid;
+    border-color: transparent transparent var(--green) transparent;
+}
+
+.bowl .bottom{
+    width: 300px;
+    height: 42px;
+    background-color: var(--green);
+    border-radius: 51% 49% 49% 51% / 0% 0% 100% 100% ;
+}
+
+.bowl .fa-fish{
+    display: none;
+    visibility: hidden;
+    font-size: 110px;
+    margin: -50px auto auto 25px;
+    transform: rotate(-5deg);
+    opacity: 0.9;
+}
+
+.bowl:hover .fa-fish{
+   display: block;
+   visibility: visible;
+}
+
